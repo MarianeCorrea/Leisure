@@ -1,0 +1,122 @@
+/* Reseta as margens e o padding, garantindo uma base limpa */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Garantir que a página ocupe toda a altura da tela */
+html, body {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    background-color: #111;
+}
+
+/* Cabeçalho da página */
+header {
+    background: linear-gradient(to right, #1a1a1a, #333);
+    padding: 20px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    color: #b12222;
+    letter-spacing: 2px;
+}
+
+.nav-bar {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: #ddd;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.nav-bar a:hover, .nav-bar a.active {
+    color: #f43636;
+}
+
+/* Estilo da galeria de vídeos */
+.video-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 40px;
+    margin-top: 30px;
+}
+
+.video-item {
+    background: #222;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+    transition: transform 0.3s ease;
+}
+
+.video-item:hover {
+    transform: scale(1.05);
+}
+
+.video-item iframe {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.video-item h3 {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    color: #f44336;
+    font-weight: bold;
+}
+
+/* Animações */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilo do rodapé */
+footer {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    color: #ccc;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-bar {
+        margin-top: 10px;
+    }
+}

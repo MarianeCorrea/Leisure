@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leisure - Contacts</title>
+    <link rel="stylesheet" href="styles4.css">
+</head>
+<body>
+    <!-- Logo da banda no canto superior esquerdo -->
+    <div class="logo-container">
+        <a href="index.html">
+            <img src="logo.png" alt="Logo da banda Leisure">
+        </a>
+    </div>
+
+    <!-- Título "Contacts" -->
+    <h1 class="contact-title">Contacts</h1>
+
+    <!-- Formulário de contato -->
+    <div class="form-background">
+        <form class="contact-form" id="contactForm" onsubmit="showSuccessMessage(event)">
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Mensagem:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <div class="button-container">
+                <button type="submit" class="submit-button">Enviar</button>
+            </div>
+        </form>
+        <!-- Mensagem de sucesso -->
+        <div id="successMessage" class="success-message">E-mail enviado com sucesso!</div>
+    </div>
+
+    <script>
+        // Função para mostrar a mensagem de sucesso e limpar os campos após o envio do formulário
+        function showSuccessMessage(event) {
+            event.preventDefault(); // Previne o comportamento padrão de envio do formulário
+
+            // Exibe a mensagem de sucesso
+            document.getElementById("successMessage").style.display = "block";
+
+            // Limpa os campos do formulário
+            document.getElementById("contactForm").reset();
+
+            // Esconde a mensagem de sucesso após 3 segundos
+            setTimeout(() => {
+                document.getElementById("successMessage").style.display = "none";
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

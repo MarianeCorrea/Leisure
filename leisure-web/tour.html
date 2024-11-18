@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leisure - Tour</title>
+    <link rel="stylesheet" href="styles3.css">
+</head>
+<body>
+    <!-- Logo da banda no canto superior esquerdo -->
+    <div class="logo-container">
+        <a href="index.html">
+            <img src="logo.png" alt="Logo da banda Leisure">
+        </a>
+    </div>
+
+    <!-- Título "Tour" -->
+    <h1 class="tour-title">Tour</h1>
+
+    <!-- Lista de Tours -->
+    <div class="tour-list">
+        <div class="tour-item">
+            <div class="tour-info">
+                <p class="name-tour">Brazil - Guarda do Embaú - 12/14</p>
+                <button class="ticket-button" onclick="openModal('brazil')">TICKETS</button>
+            </div>
+        </div>
+        <div class="tour-item">
+            <div class="tour-info">
+                <p  class="name-tour">Paraguay - Ciudad Del Leste - 12/16</p>
+                <button class="ticket-button" onclick="openModal('paraguay')">TICKETS</button>
+            </div>
+        </div>
+        <div class="tour-item">
+            <div class="tour-info">
+                <p class="name-tour">Bolivia - Cochabamba - 12/18</p>
+                <button class="ticket-button" onclick="openModal('bolivia')">TICKETS</button>
+            </div>
+        </div>
+        <div class="tour-item">
+            <div class="tour-info">
+                <p class="name-tour">Cuba - Havana - 12/21</p>
+                <button class="ticket-button" onclick="openModal('cuba')">TICKETS</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop-up Modal -->
+    <div id="ticketModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDetails"></p>
+            <form id="emailForm">
+                <label for="email">Digite seu e-mail para mais informações:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+                <button type="submit" class="submit-btn">Enviar</button>
+            </form>
+            <p id="successMessage" class="success-message" style="display:none;">Enviado com sucesso!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

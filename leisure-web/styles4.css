@@ -1,0 +1,184 @@
+/* Geral */
+body {
+    margin: 0;
+    padding: 0;
+    background: url('estrela-16-pontas.png') no-repeat center; /* Fundo com estrela centralizada */
+    background-size: 80%; /* Ajusta o tamanho da imagem de fundo para torná-la maior */
+    background-attachment: fixed; /* A imagem de fundo fica fixa ao rolar a página */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza os elementos */
+    justify-content: center; /* Centraliza verticalmente */
+    position: relative; /* Permite posicionar outros elementos em relação a este */
+    font-family: 'Arial', sans-serif; /* Definindo uma fonte simples */
+    background-color: #9B111E; /* Cor de fundo vermelha vinho */
+    animation: fadeIn 1.5s ease-out; /* Animação de desvanecimento ao carregar */
+}
+
+/* Logo no canto superior esquerdo */
+.logo-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+.logo-container img {
+    width: 150px; /* Ajuste o tamanho da logo */
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo-container img:hover {
+    transform: scale(1.1); /* Efeito de zoom na logo */
+}
+
+/* Título "Contacts" */
+.contact-title {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: 48px;
+    margin-top: 100px;
+    animation: slideInDown 1s ease-out;
+}
+
+/* Animação de entrada */
+@keyframes slideInDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Estilo do formulário de contato */
+.form-background {
+    background-color: rgba(139, 0, 0, 0.9); /* Fundo vermelho escuro */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 1;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    animation: slideIn 1s ease-out;
+}
+
+/* Animação do formulário */
+@keyframes slideIn {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Estilo dos campos do formulário */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+.contact-form label {
+    margin: 10px 0;
+    font-size: 18px;
+    color: white;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #ff6347; /* Cor da borda quando em foco */
+    outline: none;
+}
+
+/* Estilo do botão */
+.submit-button {
+    background-color: red;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: darkred;
+    transform: scale(1.05); /* Aumento do botão no hover */
+}
+
+/* Mensagem de sucesso após envio */
+.success-message {
+    display: none;
+    background-color: #28a745; /* Verde de sucesso */
+    color: white;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+    animation: fadeInMessage 1s ease-out;
+}
+
+/* Animação de mensagem de sucesso */
+@keyframes fadeInMessage {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Sombra da estrela de fundo */
+body::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; /* Aumenta o tamanho da estrela */
+    height: 100%; /* Aumenta o tamanho da estrela */
+    background: url('image/estrela-16-pontas.png') no-repeat center;
+    background-size: 100%; /* Ajusta o tamanho da estrela para ser maior */
+    opacity: 0.2; /* Torna a estrela mais transparente */
+    z-index: -1; /* Coloca a estrela atrás de outros elementos */
+}

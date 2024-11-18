@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    background-image: url('banda-leisure.jpg'); /* Substitua pelo nome da sua imagem */
+    background-size: cover; /* Faz com que a imagem cubra todo o fundo */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Impede a repetição da imagem */
+}
+
+/* Centraliza o logo no meio da página */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.logo-container img {
+    max-width: 270px;    /* Limita a largura a 250px */
+    max-height: 270px;   /* Limita a altura a 150px */
+    height: auto;
+}
+
+
+/* Redes sociais no canto superior direito */
+.social-media {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.social-media a {
+    margin-left: 15px;
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-media a:hover {
+    transform: scale(1.3); /* Ampliação */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* Glow */
+}
+
+.social-media img {
+    width: 30px;
+    height: 30px;
+    filter: invert(100%);
+}
+
+/* Botões de navegação na parte inferior */
+.nav-buttons {
+    position: absolute; /* Garante que os botões fiquem fixados */
+    bottom: 150px; /* Espaço da parte inferior da página */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translateX(-50%); /* Corrige o alinhamento central */
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Espaçamento entre os botões */
+}
+
+.nav-buttons .btn {
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-buttons .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.3s ease;
+    z-index: 1;
+}
+
+.nav-buttons .btn:hover {
+    background-color: darkred;
+    transform: translateY(-3px); /* Elevação */
+}
+
+.nav-buttons .btn:hover::before {
+    left: 100%;
+}
+
+.nav-buttons .btn:active {
+    transform: translateY(2px); /* Efeito de clique */
+}

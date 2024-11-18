@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leisure - Music</title>
+    <link rel="stylesheet" href="styles5.css">
+</head>
+<body>
+
+    <div class="logo-container">
+        <a href="index.html">
+            <img src="logo.png" alt="Logo da banda Leisure">
+        </a>
+    </div>
+
+    <!-- Estrela de fundo -->
+    <div class="star-background"></div>
+
+    <!-- Título da página -->
+    <h1 class="music-title">Músicas</h1>
+
+    <!-- Lista de músicas -->
+    <div class="music-list">
+        <div class="music-item" onclick="playSong('gotitbad')">Got It Bad</div>
+        <div class="music-item" onclick="playSong('nobody')">Nobody</div>
+        <div class="music-item" onclick="playSong('alloveryou')">All Over You</div>
+        <div class="music-item" onclick="playSong('falling')">Falling</div>
+        <div class="music-item" onclick="playSong('knowyoubetter')">Know You Better</div>
+        <div class="music-item" onclick="playSong('man')">Man</div>
+        <div class="music-item" onclick="playSong('money')">Money</div>
+        <div class="music-item" onclick="playSong('slippingaway')">Slipping Away</div>
+        <div class="music-item" onclick="playSong('sparkitup')">Spark It Up</div>
+        <div class="music-item" onclick="playSong('easywayout')">Easy Way Out</div>
+    </div>
+
+    <!-- Player de Música -->
+    <div class="audio-player">
+        <audio id="audioPlayer" controls>
+            <source id="audioSource" src="" type="audio/mp3">
+            Seu navegador não suporta o elemento de áudio.
+        </audio>
+        <div class="player-controls">
+            <button onclick="prevSong()">&#9664;</button>
+            <button onclick="togglePlayPause()" id="playPauseButton">&#9658;/&#10074;&#10074;</button>
+            <button onclick="nextSong()">&#9654;</button>
+        </div>
+    </div>
+
+    <script src="scriptM.js"></script>
+</body>
+</html>
